@@ -6,6 +6,7 @@ const navLinks: { href: string; label: string }[] = [
 	{ href: "/#about", label: "About" },
 	{ href: "/timeline", label: "Timeline" },
 	{ href: "/focus", label: "Focus" },
+	{ href: "/slide", label: "Slide" },
 	{ href: "/contact", label: "Contact" }
 ];
 
