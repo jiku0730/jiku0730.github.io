@@ -8,6 +8,7 @@ const notoSans = Noto_Sans_JP({ subsets: ["latin"], variable: "--font-noto" });
 export const metadata: Metadata = {
 	title: "jiku's homepage",
 	description: "jiku's portfolio",
+	metadataBase: new URL("https://jiku0730.github.io"),
 	openGraph: {
 		title: "jiku's homepage",
 		description: "jiku's portfolio",
