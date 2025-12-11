@@ -73,7 +73,6 @@ export default function TimelinePage() {
 					<div className="relative mt-12 border-l border-white/10 pl-6">
 						{timeline.map((item) => (
 							<div key={item.title} className="relative pb-12 last:pb-0">
-								<span className="absolute -left-[9px] mt-1 h-4 w-4 rounded-full border border-accent-500 bg-slate-950" />
 								<p className="text-xs uppercase tracking-wider text-accent-400">{item.period}</p>
 								<h2 className="mt-1 text-2xl font-semibold text-white">{item.title}</h2>
 								{Array.isArray(item.description) ? (
