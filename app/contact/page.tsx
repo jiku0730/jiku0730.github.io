@@ -12,10 +12,6 @@ export default function ContactPage() {
 							プロジェクトのお誘い、共同研究のご相談、学習コミュニティでの輪講など、お気軽にご連絡ください。
 						</p>
 						<div className="rounded-3xl border border-white/10 bg-white/5 p-6 shadow-xl shadow-black/30 backdrop-blur">
-							<h2 className="text-lg font-semibold text-white">フォームで直接送信</h2>
-							<p className="mt-2 text-sm leading-relaxed text-slate-200">
-								以下のフォームから送信すると、内容が僕のGmailに届きます。
-							</p>
 							<div className="mt-6">
 								<ContactForm />
 							</div>
