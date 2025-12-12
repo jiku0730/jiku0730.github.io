@@ -1,4 +1,5 @@
 import PageShell from "../../components/page-shell";
+import TypewriterText from "../../components/typewriter-text";
 
 type TimelineEvent = {
 	period: string;
@@ -64,13 +65,22 @@ const timeline: TimelineEvent[] = [
 export default function TimelinePage() {
 	return (
 		<PageShell>
-			<section className="relative flex flex-1 flex-col px-6 py-24">
-				<div className="mx-auto w-full max-w-4xl">
-					<h1 className="text-4xl font-semibold text-white">Timeline</h1>
-					<p className="mt-4 text-base leading-relaxed text-slate-200">
-						物理と情報のあいだで積み重ねてきた歩みを、時間の流れに沿ってまとめました。
+			<section id="hero" className="relative flex flex-1 items-center justify-center px-6 py-24">
+				<div className="mx-auto max-w-3xl text-center">
+					<p className="text-sm uppercase tracking-[0.1em] text-accent-400">My Journey</p>
+					<h1 className="mt-6 text-4xl font-bold leading-tight text-white sm:text-4xl">
+						<TypewriterText text="これまでの歩みをまとめました。" speed={70} />
+					</h1>
+					<p className="mt-6 text-base leading-relaxed text-slate-200 sm:text-lg">
+						物理と情報のあいだで重ねてきた挑戦と節目を、時系列で紹介します。
 					</p>
-					<div className="relative mt-12 border-l border-white/10 pl-6">
+				</div>
+			</section>
+
+			<section className="relative border-t border-white/5 bg-slate-950/70 px-6 py-24">
+				<div className="mx-auto w-full max-w-4xl">
+					<p className="text-sm uppercase tracking-[0.05em] text-accent-400">Timeline</p>
+					<div className="relative mt-8 border-l border-white/10 pl-6">
 						{timeline.map((item) => (
 							<div key={item.title} className="relative pb-12 last:pb-0">
 								<p className="text-xs uppercase tracking-wider text-accent-400">{item.period}</p>
