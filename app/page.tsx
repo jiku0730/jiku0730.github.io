@@ -1,4 +1,5 @@
 import PageShell from "../components/page-shell";
+import TypewriterText from "../components/typewriter-text";
 
 type ContactMethod = {
 	label: string;
@@ -71,7 +72,7 @@ export default function HomePage() {
 				<div className="mx-auto max-w-3xl text-center">
 					<p className="text-sm uppercase tracking-[0.1em] text-accent-400">Physics × Software</p>
 					<h1 className="mt-6 text-4xl font-bold leading-tight text-white sm:text-4xl">
-						物理学と情報科学の交差点から発信します。
+						<TypewriterText text="物理学と情報科学の交差点から発信します。" speed={70} />
 					</h1>
 					<p className="mt-6 text-base leading-relaxed text-slate-200 sm:text-lg">
 						物理を学びつつ、42Tokyoでソフトウェアの基礎を鍛えている学生です。

@@ -15,3 +15,20 @@ body {
 	background-color: #4f46e5;
 	color: #f8fafc;
 }
+
+@keyframes typewriter-caret-blink {
+
+	0%,
+	49% {
+		opacity: 1;
+	}
+
+	51%,
+	100% {
+		opacity: 0;
+	}
+}
+
+.animate-caret-blink {
+	animation: typewriter-caret-blink 1.35s steps(1, end) infinite;
+}
