@@ -13,42 +13,55 @@ const contactMethods: ContactMethod[] = [
 		label: "Email",
 		value: "kei2003730@gmail.com",
 		href: "mailto:kei2003730@gmail.com",
-		description: "一番確実な連絡先。カジュアルな相談も歓迎しています。"
+		description: "一番確実な連絡先です。\nカジュアルな相談も歓迎しています。"
 	},
 	{
 		label: "Github",
 		value: "@jiku0730",
 		href: "https://github.com/jiku0730",
-		description: "現在取り組み中の課題が確認できます。コメントやPRなども受け付けています。"
+		description: "取り組んだ課題をまとめています。\nコメントやPRなども受け付けています。"
 	},
 	{
 		label: "X (Twitter)",
 		value: "@jiku0730",
 		href: "https://twitter.com/jiku0730",
-		description: "日々の気づきや42Tokyoでの学びを発信中。DMは開放しています。",
+		description: "日々の気づきや学びを発信しています。",
 		external: true
 	},
 	{
 		label: "Zenn（現在未使用）",
 		value: "zenn.dev/jiku_jiku",
 		href: "https://zenn.dev/jiku_jiku",
-		description: "技術記事や学習メモをまとめています。",
+		description: "技術記事や学習メモをまとめる予定です。",
 		external: true
 	},
 	{
 		label: "Qiita",
 		value: "qiita.com/jiku0730",
 		href: "https://qiita.com/jiku0730",
-		description: "コンテストで気づいた実装テクニックや学びを共有しています。",
+		description: "実装テクニックや学びを共有しています。",
 		external: true
 	},
 	{
 		label: "note",
 		value: "note.com/jiku0730",
 		href: "https://note.com/jiku0730",
-		description: "物理と日々の学習を言葉で整理するライフログを掲載中です。",
+		description: "日常生活をゆるくまとめています。",
 		external: true
 	}
+];
+
+const aboutParagraphs = [
+	"物理への好奇心から歩み出し、数式で世界を記述することの面白さに惹かれてきました。大学では量子力学や熱物理に触れ、モデル化と計算の楽しさを味わっています。",
+	(
+		<>
+			現在は休学して42Tokyoでソフトウェア開発のスキルを磨いています。
+			<span className="inline rounded bg-accent-500/80 px-2 py-0.5 text-white">博士課程で物理を深めたい夢</span>
+			と
+			<span className="inline rounded bg-accent-500/80 px-2 py-0.5 text-white">プロダクトで価値を届けたい夢</span>
+			の間で、自分の軸を探っています。
+		</>
+	)
 ];
 
 export default function HomePage() {
@@ -56,7 +69,7 @@ export default function HomePage() {
 		<PageShell headerProps={{ brandHref: "#hero" }}>
 			<section id="hero" className="relative flex flex-1 items-center justify-center px-6 py-24">
 				<div className="mx-auto max-w-3xl text-center">
-					<p className="text-sm uppercase tracking-[0.4em] text-accent-400">Physics × Software</p>
+					<p className="text-sm uppercase tracking-[0.1em] text-accent-400">Physics × Software</p>
 					<h1 className="mt-6 text-4xl font-bold leading-tight text-white sm:text-4xl">
 						物理学と情報科学の交差点から発信します。
 					</h1>
@@ -70,12 +83,11 @@ export default function HomePage() {
 				<div className="mx-auto flex max-w-5xl flex-col gap-12 md:flex-row">
 					<div className="flex-1 space-y-4">
 						<h2 className="text-3xl font-semibold text-white">About</h2>
-						<p className="text-base leading-relaxed text-slate-200">
-							物理への好奇心から歩み出し、数式で世界を記述することの面白さに惹かれてきました。大学では量子力学や熱物理に触れ、モデル化と計算の楽しさを味わっています。
-						</p>
-						<p className="text-base leading-relaxed text-slate-200">
-							現在は休学して42Tokyoでソフトウェア開発のスキルを磨いています。博士課程で物理を深めたい夢とプロダクトで価値を届けたい夢の間で、自分の軸を探っています。
-						</p>
+						{aboutParagraphs.map((paragraph, index) => (
+							<p key={index} className="text-base leading-relaxed text-slate-200">
+								{paragraph}
+							</p>
+						))}
 					</div>
 					<div className="flex-1 rounded-3xl border border-white/10 bg-white/5 p-7 shadow-2xl shadow-black/35 backdrop-blur">
 						<h3 className="text-lg font-semibold text-white">Skill Highlights</h3>
@@ -105,9 +117,7 @@ export default function HomePage() {
 							<p className="mt-4 text-base leading-relaxed text-slate-200">
 								プロジェクトのお誘い、学習コミュニティでの輪講、進路の相談など、気軽にご連絡ください。
 							</p>
-							<p className="text-sm text-slate-400">
-								※ SNSは技術発信が中心です。作品や取り組みの感想なども歓迎しています。
-							</p>
+
 						</div>
 					</div>
 					<div className="mt-10 grid gap-6 md:grid-cols-3">
@@ -118,7 +128,7 @@ export default function HomePage() {
 							>
 								<div>
 									<h3 className="text-lg font-semibold text-white">{method.label}</h3>
-									<p className="mt-2 text-sm leading-relaxed text-slate-200">{method.description}</p>
+									<p className="mt-2 text-sm leading-relaxed text-slate-200 whitespace-pre-line">{method.description}</p>
 								</div>
 								<a
 									href={method.href}
