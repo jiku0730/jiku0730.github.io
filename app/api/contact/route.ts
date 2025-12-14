@@ -20,9 +20,10 @@ export async function POST(request: Request) {
 
 		const gmailUser = process.env.GMAIL_USER;
 		const gmailAppPassword = process.env.GMAIL_APP_PASSWORD;
+		const contactReceiver = process.env.CONTACT_RECEIVER;
 
-		if (!gmailUser || !gmailAppPassword) {
-			console.error("GMAIL_USER または GMAIL_APP_PASSWORD が設定されていません。");
+		if (!gmailUser || !gmailAppPassword || !contactReceiver) {
+			console.error("メール送信に必要な環境変数(GMAIL_USER, GMAIL_APP_PASSWORD, CONTACT_RECEIVER)が不足しています。");
 			return NextResponse.json(
 				{ error: "メール送信設定が完了していません。管理者にお問い合わせください。" },
 				{ status: 500 }
@@ -40,7 +41,7 @@ export async function POST(request: Request) {
 		await transporter.sendMail({
 			from: `Portfolio Contact <${gmailUser}>`,
 			replyTo: `${name} <${email}>`,
-			to: gmailUser,
+			to: contactReceiver,
 			subject: `Portfolio contact from ${name}`,
 			text: `Name: ${name}\nEmail: ${email}\n\n${message}`,
 			html: `<p><strong>Name:</strong> ${name}</p><p><strong>Email:</strong> ${email}</p><p>${message.replace(/\n/g, "<br />")}</p>`
