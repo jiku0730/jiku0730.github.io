@@ -30,13 +30,6 @@ const contactMethods: ContactMethod[] = [
 		external: true
 	},
 	{
-		label: "Zenn（現在未使用）",
-		value: "zenn.dev/jiku_jiku",
-		href: "https://zenn.dev/jiku_jiku",
-		description: "技術記事や学習メモをまとめる予定です。",
-		external: true
-	},
-	{
 		label: "Qiita",
 		value: "qiita.com/jiku0730",
 		href: "https://qiita.com/jiku0730",
@@ -49,7 +42,14 @@ const contactMethods: ContactMethod[] = [
 		href: "https://note.com/jiku0730",
 		description: "日常生活をゆるくまとめています。",
 		external: true
-	}
+	},
+	{
+		label: "Zenn（現在未使用）",
+		value: "zenn.dev/jiku_jiku",
+		href: "https://zenn.dev/jiku_jiku",
+		description: "技術記事や学習メモをまとめる予定です。",
+		external: true
+	},
 ];
 
 const aboutParagraphs = [
